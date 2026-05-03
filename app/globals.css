@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
+/* Test Tiempos Headline — add font files to /public/fonts/ */
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("/fonts/TestTiemposHeadline-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("/fonts/TestTiemposHeadline-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafcfd;
+  --foreground: #32404f;
+  --muted: rgba(50, 64, 79, 0.58);
+  --border: rgba(50, 64, 79, 0.1);
+  --accent: #e65f2e;
+  --font-tiempos: "Tiempos Headline", Georgia, "Times New Roman", serif;
 }
 
 @theme inline {
@@ -12,15 +33,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }

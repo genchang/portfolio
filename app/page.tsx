@@ -1,65 +1,296 @@
-import Image from "next/image";
+import Link from "next/link";
+import HoverVideo from "./HoverVideo";
+import ExternalArrow from "./ExternalArrow";
+import SaFlagIcon from "./SaFlagIcon";
 
 export default function Home() {
+  const workHistory = [
+    {
+      year: "2026",
+      company: "Independent Practice Designer",
+      role: "Product Designer",
+    },
+    {
+      year: "2023",
+      company: "Discovery Vitality International",
+      role: "Senior Designer",
+    },
+    {
+      year: "2022",
+      company: "Saudi Arabia's Vision Bank",
+      role: "Senior Designer",
+    },
+    {
+      year: "2021",
+      company: "Independent Practice Designer",
+      role: "Product Designer",
+    },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="min-h-screen flex flex-col">
+      {/* Navbar */}
+      <nav
+        className="flex items-center justify-between px-6 h-16 shrink-0"
+        style={{ borderBottom: "1px solid rgba(50,64,79,0.1)" }}
+      >
+        {/* Left: name + subtitle */}
+        <div className="flex items-center gap-4">
+          <span
+            className="text-[15px] uppercase leading-[22.5px]"
+            style={{
+              fontFamily: "var(--font-geist-mono)",
+              fontWeight: 500,
+              color: "#32404f",
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Gen Chang
+          </span>
+          <span
+            className="text-[15px] uppercase leading-[22.5px]"
+            style={{
+              fontFamily: "var(--font-geist-mono)",
+              fontWeight: 400,
+              color: "rgba(50,64,79,0.58)",
+            }}
           >
-            Documentation
-          </a>
+            Product Designer + professional dabbler
+          </span>
         </div>
+
+        {/* Right: nav links */}
+        <div className="flex items-center gap-8">
+          {[
+            { label: "Work", href: "/", active: true, external: false },
+            { label: "Side quests", href: "/side-quests", active: false, external: false },
+            { label: "About", href: "/about", active: false, external: false },
+            { label: "Email", href: "mailto:genchang1@gmail.com", active: false, external: true },
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", active: false, external: true },
+          ].map(({ label, href, active, external }) => (
+            <Link
+              key={label}
+              href={href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noopener noreferrer" : undefined}
+              className={`text-[15px] uppercase leading-[22.5px] cursor-pointer inline-flex items-center gap-1.5 transition-colors ${active ? "text-[#e65f2e]" : "text-[rgba(50,64,79,0.58)] hover:text-[#e65f2e]"}`}
+              style={{
+                fontFamily: "var(--font-geist-mono)",
+                fontWeight: 400,
+              }}
+            >
+              {label}
+              {external && <ExternalArrow />}
+            </Link>
+          ))}
+        </div>
+      </nav>
+
+      {/* Main content */}
+      <main className="flex-1 px-6">
+        {/* Hero section */}
+        <section className="grid grid-cols-2 gap-6 pt-[180px] pb-8">
+          {/* Left: heading */}
+          <div className="max-w-[700px]">
+            <h1
+              className="text-[49.9px] leading-[57.2px] tracking-[-0.34px] text-[#32404f]"
+              style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
+            >
+              I&apos;m Gen. Product designer by trade,{" "}
+              <em style={{ fontWeight: 400 }}>tinkerer by nature</em>
+            </h1>
+          </div>
+
+          {/* Right: work history */}
+          <div className="flex flex-col gap-[2px] justify-end pb-1">
+            {workHistory.map((item) => (
+              <div key={item.year} className="flex items-start gap-6">
+                <span
+                  className="text-[15px] uppercase leading-[22.5px] min-w-[104px] shrink-0"
+                  style={{
+                    fontFamily: "var(--font-geist-mono)",
+                    fontWeight: 400,
+                    color: "rgba(50,64,79,0.58)",
+                  }}
+                >
+                  {item.year}
+                </span>
+                <span
+                  className="text-[15px] leading-[22.5px] min-w-[282px] shrink-0"
+                  style={{
+                    fontFamily: "var(--font-geist-sans)",
+                    fontWeight: 400,
+                    color: "#32404f",
+                  }}
+                >
+                  {item.company}
+                </span>
+                <span
+                  className="text-[15px] leading-[22.5px]"
+                  style={{
+                    fontFamily: "var(--font-geist-sans)",
+                    fontWeight: 400,
+                    color: "rgba(50,64,79,0.58)",
+                  }}
+                >
+                  {item.role}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Project cards */}
+        <section className="grid grid-cols-2 gap-6">
+          {/* Card 1 — Discovery Vitality */}
+          <Link href="/vitality" className="flex flex-col gap-2 group">
+            <div
+              className="w-full overflow-hidden"
+              style={{ border: "1px solid rgba(50,64,79,0.1)" }}
+            >
+              <div
+                className="w-full bg-[#f4f7f9] overflow-hidden"
+                style={{ aspectRatio: "16 / 9" }}
+              >
+                <HoverVideo src="/vitality.mp4" aria="Discovery Vitality project illustration" />
+              </div>
+            </div>
+            <div className="flex flex-col gap-3 pt-1">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <span
+                  className="text-[16px] tracking-[0.6px] text-[#32404f] leading-normal"
+                  style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
+                >
+                  Built Once, Shipped Everywhere
+                </span>
+                <span
+                  className="text-[13px] uppercase leading-[20px] ml-auto text-right"
+                  style={{
+                    fontFamily: "var(--font-geist-mono)",
+                    fontWeight: 400,
+                    color: "rgba(50,64,79,0.58)",
+                    letterSpacing: "0.3px",
+                  }}
+                >
+                  Discovery Vitality • 2025
+                </span>
+              </div>
+              <p
+                className="text-[14px] leading-[22px] max-w-[600px]"
+                style={{
+                  fontFamily: "var(--font-geist-sans)",
+                  fontWeight: 400,
+                  color: "rgba(50,64,79,0.78)",
+                }}
+              >
+                Scaling a global rewards platform across 10+ markets — from
+                adaptive AI goals to localisation-ready design systems.
+              </p>
+            </div>
+          </Link>
+
+          {/* Card 2 — Vision Bank */}
+          <Link href="/vision-bank" className="flex flex-col gap-2 group">
+            <div
+              className="w-full overflow-hidden"
+              style={{ border: "1px solid rgba(50,64,79,0.1)" }}
+            >
+              <div
+                className="w-full bg-[#eff2f7] overflow-hidden"
+                style={{ aspectRatio: "16 / 9" }}
+              >
+                <HoverVideo src="/bank.mp4" aria="Vision Bank project illustration" />
+              </div>
+            </div>
+            <div className="flex flex-col gap-3 pt-1">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <span
+                  className="text-[16px] tracking-[0.6px] text-[#32404f] leading-normal"
+                  style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
+                >
+                  Designing the foundations of a digital bank
+                </span>
+                <span
+                  className="text-[13px] uppercase leading-[20px] ml-auto text-right"
+                  style={{
+                    fontFamily: "var(--font-geist-mono)",
+                    fontWeight: 400,
+                    color: "rgba(50,64,79,0.58)",
+                    letterSpacing: "0.3px",
+                  }}
+                >
+                  Vision Bank • 2022
+                </span>
+              </div>
+              <p
+                className="text-[14px] leading-[22px] max-w-[600px]"
+                style={{
+                  fontFamily: "var(--font-geist-sans)",
+                  fontWeight: 400,
+                  color: "rgba(50,64,79,0.78)",
+                }}
+              >
+                Helping shape customer journeys, white-label systems, and
+                reusable design foundations across mobile and tablet
+                devices.
+              </p>
+            </div>
+          </Link>
+        </section>
       </main>
+
+      {/* Footer */}
+      <footer
+        className="flex items-center justify-between px-6 py-[20px] mt-8"
+        style={{ borderTop: "1px solid rgba(50,64,79,0.1)" }}
+      >
+        {/* Left: credit */}
+        <div className="flex items-center gap-1">
+          <span
+            className="text-[15px] uppercase leading-[22.5px]"
+            style={{
+              fontFamily: "var(--font-geist-mono)",
+              fontWeight: 400,
+              color: "rgba(50,64,79,0.58)",
+            }}
+          >
+            Designed with
+          </span>
+          <HeartIcon />
+          <span
+            className="text-[15px] uppercase leading-[22.5px]"
+            style={{
+              fontFamily: "var(--font-geist-mono)",
+              fontWeight: 400,
+              color: "rgba(50,64,79,0.58)",
+            }}
+          >
+            by Gen • Cape Town
+          </span>
+          <SaFlagIcon />
+        </div>
+
+      </footer>
     </div>
+  );
+}
+
+function HeartIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="mx-1"
+      aria-hidden="true"
+    >
+      <path
+        d="M7.5 13C7.5 13 1.5 9.2 1.5 5a3 3 0 0 1 6-0.4A3 3 0 0 1 13.5 5c0 4.2-6 8-6 8Z"
+        stroke="rgba(50,64,79,0.58)"
+        strokeWidth="1"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
