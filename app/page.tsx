@@ -175,7 +175,11 @@ export default function Home() {
                 className="w-full bg-[#f4f7f9] overflow-hidden"
                 style={{ aspectRatio: "16 / 9" }}
               >
-                <HoverVideo src="/vitality.mp4" aria="Discovery Vitality project illustration" />
+                <HoverVideo
+                  src="/vitality.mp4"
+                  aria="Discovery Vitality project illustration"
+                  autoPlayOnMobile
+                />
               </div>
             </div>
             <div className="flex flex-col gap-3 pt-1">
@@ -222,7 +226,11 @@ export default function Home() {
                 className="w-full bg-[#eff2f7] overflow-hidden"
                 style={{ aspectRatio: "16 / 9" }}
               >
-                <HoverVideo src="/bank.mp4" aria="Vision Bank project illustration" />
+                <HoverVideo
+                  src="/bank.mp4"
+                  aria="Vision Bank project illustration"
+                  autoPlayOnMobile
+                />
               </div>
             </div>
             <div className="flex flex-col gap-3 pt-1">
