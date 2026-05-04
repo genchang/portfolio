@@ -86,9 +86,9 @@ export default function AboutPage() {
 
       {/* Main content */}
       <main className="flex-1 px-4 md:px-6">
-        <section className="pt-8 md:pt-12 pb-12 max-w-[1100px]">
-          <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-12 items-start">
-            <div className="flex-1 max-w-[640px]">
+        <section className="pt-8 md:pt-12 pb-12 max-w-[900px]">
+          <div className="flex flex-col gap-8 md:gap-10 items-start">
+            <div className="max-w-[640px]">
               <h1
                 className="text-[36px] leading-[42px] md:text-[49.9px] md:leading-[57.2px] tracking-[-0.34px] text-[#32404f] mb-8 md:mb-10"
                 style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
@@ -148,9 +148,9 @@ export default function AboutPage() {
             </div>
 
             <div
-              className="relative shrink-0 ml-auto"
+              className="relative"
               style={{
-                width: "320px",
+                width: "280px",
                 background: "#ffffff",
                 padding: "16px 16px 56px",
                 boxShadow:
