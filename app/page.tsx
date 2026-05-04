@@ -1,7 +1,7 @@
 import Link from "next/link";
 import HoverVideo from "./HoverVideo";
-import ExternalArrow from "./ExternalArrow";
 import SaFlagIcon from "./SaFlagIcon";
+import MobileNav from "./MobileNav";
 
 export default function Home() {
   const workHistory = [
@@ -59,30 +59,15 @@ export default function Home() {
         </div>
 
         {/* Right: nav links */}
-        <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-2">
-          {[
-            { label: "Work", href: "/", active: true, external: false },
-            { label: "Side quests", href: "/side-quests", active: false, external: false },
-            { label: "About", href: "/about", active: false, external: false },
-            { label: "Email", href: "mailto:genchang1@gmail.com", active: false, external: true },
-            { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", active: false, external: true },
-          ].map(({ label, href, active, external }) => (
-            <Link
-              key={label}
-              href={href}
-              target={external ? "_blank" : undefined}
-              rel={external ? "noopener noreferrer" : undefined}
-              className={`text-[15px] uppercase leading-[22.5px] cursor-pointer inline-flex items-center gap-1.5 transition-colors ${active ? "text-[#e65f2e]" : "text-[rgba(50,64,79,0.58)] hover:text-[#e65f2e]"}`}
-              style={{
-                fontFamily: "var(--font-geist-mono)",
-                fontWeight: 400,
-              }}
-            >
-              {label}
-              {external && <ExternalArrow />}
-            </Link>
-          ))}
-        </div>
+        <MobileNav
+          items={[
+            { label: "Work", href: "/", active: true },
+            { label: "Side quests", href: "/side-quests" },
+            { label: "About", href: "/about" },
+            { label: "Email", href: "mailto:genchang1@gmail.com", external: true },
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", external: true },
+          ]}
+        />
       </nav>
 
       {/* Main content */}
@@ -101,9 +86,12 @@ export default function Home() {
           </div>
 
           {/* Right: work history */}
-          <div className="flex flex-col gap-[2px] justify-end pb-1">
+          <div className="flex flex-col gap-3 md:gap-[2px] justify-end pb-1">
             {workHistory.map((item) => (
-              <div key={item.year} className="flex flex-wrap items-start gap-x-4 md:gap-x-6 gap-y-1">
+              <div
+                key={item.year}
+                className="flex items-start gap-6 md:gap-6"
+              >
                 <span
                   className="text-[15px] uppercase leading-[22.5px] min-w-[80px] md:min-w-[104px] shrink-0"
                   style={{
@@ -114,26 +102,28 @@ export default function Home() {
                 >
                   {item.year}
                 </span>
-                <span
-                  className="text-[15px] leading-[22.5px] md:min-w-[282px] md:shrink-0"
-                  style={{
-                    fontFamily: "var(--font-geist-sans)",
-                    fontWeight: 400,
-                    color: "#32404f",
-                  }}
-                >
-                  {item.company}
-                </span>
-                <span
-                  className="text-[15px] leading-[22.5px]"
-                  style={{
-                    fontFamily: "var(--font-geist-sans)",
-                    fontWeight: 400,
-                    color: "rgba(50,64,79,0.58)",
-                  }}
-                >
-                  {item.role}
-                </span>
+                <div className="flex flex-col md:flex-row md:flex-1 md:gap-6">
+                  <span
+                    className="text-[15px] leading-[22.5px] md:min-w-[282px] md:shrink-0"
+                    style={{
+                      fontFamily: "var(--font-geist-sans)",
+                      fontWeight: 400,
+                      color: "#32404f",
+                    }}
+                  >
+                    {item.company}
+                  </span>
+                  <span
+                    className="text-[15px] leading-[22.5px]"
+                    style={{
+                      fontFamily: "var(--font-geist-sans)",
+                      fontWeight: 400,
+                      color: "rgba(50,64,79,0.58)",
+                    }}
+                  >
+                    {item.role}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -155,7 +145,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col gap-3 pt-1">
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <div className="flex flex-col md:flex-row md:flex-wrap md:items-baseline md:justify-between gap-y-1 md:gap-x-4">
                 <span
                   className="text-[16px] tracking-[0.6px] text-[#32404f] leading-normal"
                   style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
@@ -163,7 +153,7 @@ export default function Home() {
                   Built Once, Shipped Everywhere
                 </span>
                 <span
-                  className="text-[13px] uppercase leading-[20px] ml-auto text-right"
+                  className="text-[13px] uppercase leading-[20px] md:ml-auto md:text-right"
                   style={{
                     fontFamily: "var(--font-geist-mono)",
                     fontWeight: 400,
@@ -202,7 +192,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col gap-3 pt-1">
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <div className="flex flex-col md:flex-row md:flex-wrap md:items-baseline md:justify-between gap-y-1 md:gap-x-4">
                 <span
                   className="text-[16px] tracking-[0.6px] text-[#32404f] leading-normal"
                   style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
@@ -210,7 +200,7 @@ export default function Home() {
                   Designing the foundations of a digital bank
                 </span>
                 <span
-                  className="text-[13px] uppercase leading-[20px] ml-auto text-right"
+                  className="text-[13px] uppercase leading-[20px] md:ml-auto md:text-right"
                   style={{
                     fontFamily: "var(--font-geist-mono)",
                     fontWeight: 400,

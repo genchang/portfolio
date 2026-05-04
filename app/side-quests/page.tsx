@@ -3,6 +3,7 @@ import HoverVideo from "../HoverVideo";
 import Carousel from "../Carousel";
 import StlViewer from "../StlViewer";
 import SaFlagIcon from "../SaFlagIcon";
+import MobileNav from "../MobileNav";
 
 export default function SideQuestsPage() {
   return (
@@ -36,30 +37,15 @@ export default function SideQuestsPage() {
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-2">
-          {[
-            { label: "Work", href: "/", active: false, external: false },
-            { label: "Side quests", href: "/side-quests", active: true, external: false },
-            { label: "About", href: "/about", active: false, external: false },
-            { label: "Email", href: "mailto:genchang1@gmail.com", active: false, external: true },
-            { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", active: false, external: true },
-          ].map(({ label, href, active, external }) => (
-            <Link
-              key={label}
-              href={href}
-              target={external ? "_blank" : undefined}
-              rel={external ? "noopener noreferrer" : undefined}
-              className={`text-[15px] uppercase leading-[22.5px] cursor-pointer inline-flex items-center gap-1.5 transition-colors ${active ? "text-[#e65f2e]" : "text-[rgba(50,64,79,0.58)] hover:text-[#e65f2e]"}`}
-              style={{
-                fontFamily: "var(--font-geist-mono)",
-                fontWeight: 400,
-              }}
-            >
-              {label}
-              {external && <ExternalArrow />}
-            </Link>
-          ))}
-        </div>
+        <MobileNav
+          items={[
+            { label: "Work", href: "/" },
+            { label: "Side quests", href: "/side-quests", active: true },
+            { label: "About", href: "/about" },
+            { label: "Email", href: "mailto:genchang1@gmail.com", external: true },
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", external: true },
+          ]}
+        />
       </nav>
 
       {/* Main content */}

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import ExternalArrow from "../ExternalArrow";
 import SaFlagIcon from "../SaFlagIcon";
+import MobileNav from "../MobileNav";
 
 export default function AboutPage() {
   return (
@@ -34,37 +34,22 @@ export default function AboutPage() {
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-2">
-          {[
-            { label: "Work", href: "/", active: false, external: false },
-            { label: "Side quests", href: "/side-quests", active: false, external: false },
-            { label: "About", href: "/about", active: true, external: false },
-            { label: "Email", href: "mailto:genchang1@gmail.com", active: false, external: true },
-            { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", active: false, external: true },
-          ].map(({ label, href, active, external }) => (
-            <Link
-              key={label}
-              href={href}
-              target={external ? "_blank" : undefined}
-              rel={external ? "noopener noreferrer" : undefined}
-              className={`text-[15px] uppercase leading-[22.5px] cursor-pointer inline-flex items-center gap-1.5 transition-colors ${active ? "text-[#e65f2e]" : "text-[rgba(50,64,79,0.58)] hover:text-[#e65f2e]"}`}
-              style={{
-                fontFamily: "var(--font-geist-mono)",
-                fontWeight: 400,
-              }}
-            >
-              {label}
-              {external && <ExternalArrow />}
-            </Link>
-          ))}
-        </div>
+        <MobileNav
+          items={[
+            { label: "Work", href: "/" },
+            { label: "Side quests", href: "/side-quests" },
+            { label: "About", href: "/about", active: true },
+            { label: "Email", href: "mailto:genchang1@gmail.com", external: true },
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", external: true },
+          ]}
+        />
       </nav>
 
       {/* Main content */}
       <main className="flex-1 px-4 md:px-6">
         <section className="pt-8 md:pt-12 pb-12 max-w-[1100px]">
-          <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-12 items-start">
-            <div className="flex-1 max-w-[640px]">
+          <div className="flex flex-col gap-12 items-start">
+            <div className="w-full max-w-[640px]">
               <h1
                 className="text-[36px] leading-[42px] md:text-[49.9px] md:leading-[57.2px] tracking-[-0.34px] text-[#32404f] mb-8 md:mb-10"
                 style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
@@ -124,11 +109,11 @@ export default function AboutPage() {
             </div>
 
             <div
-              className="relative shrink-0 ml-auto"
+              className="relative shrink-0 mx-auto"
               style={{
-                width: "320px",
+                width: "220px",
                 background: "#ffffff",
-                padding: "16px 16px 56px",
+                padding: "12px 12px 40px",
                 boxShadow:
                   "0 18px 32px -16px rgba(50,64,79,0.28), 0 6px 12px -8px rgba(50,64,79,0.18)",
                 transform: "rotate(2deg)",
@@ -141,8 +126,8 @@ export default function AboutPage() {
                   position: "absolute",
                   top: "-14px",
                   left: "-22px",
-                  width: "84px",
-                  height: "26px",
+                  width: "64px",
+                  height: "20px",
                   background:
                     "repeating-linear-gradient(135deg, rgba(255,235,150,0.78) 0 6px, rgba(255,225,120,0.78) 6px 12px)",
                   border: "1px solid rgba(180,150,40,0.18)",
@@ -157,8 +142,8 @@ export default function AboutPage() {
                   position: "absolute",
                   top: "-12px",
                   right: "-26px",
-                  width: "84px",
-                  height: "26px",
+                  width: "64px",
+                  height: "20px",
                   background:
                     "repeating-linear-gradient(135deg, rgba(255,235,150,0.78) 0 6px, rgba(255,225,120,0.78) 6px 12px)",
                   border: "1px solid rgba(180,150,40,0.18)",
