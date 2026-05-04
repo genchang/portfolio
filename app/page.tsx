@@ -1,9 +1,22 @@
+ "use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import HoverVideo from "./HoverVideo";
 import SaFlagIcon from "./SaFlagIcon";
 import MobileNav from "./MobileNav";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navLinks = [
+    { label: "Work", href: "/", active: true, external: false },
+    { label: "Side quests", href: "/side-quests", active: false, external: false },
+    { label: "About", href: "/about", active: false, external: false },
+    { label: "Email", href: "mailto:genchang1@gmail.com", active: false, external: true },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", active: false, external: true },
+  ];
+
   const workHistory = [
     {
       year: "2026",
@@ -31,43 +44,69 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       {/* Navbar */}
       <nav
-        className="flex flex-wrap items-center justify-between px-4 md:px-6 py-3 md:py-0 md:h-16 gap-x-4 gap-y-2 shrink-0"
+        className="px-4 md:px-6 py-3 md:py-0 md:h-16 shrink-0"
         style={{ borderBottom: "1px solid rgba(50,64,79,0.1)" }}
       >
-        {/* Left: name + subtitle */}
-        <div className="flex items-center gap-3 md:gap-4">
-          <span
-            className="text-[15px] uppercase leading-[22.5px]"
-            style={{
-              fontFamily: "var(--font-geist-mono)",
-              fontWeight: 500,
-              color: "#32404f",
-            }}
+        <div className="flex items-center justify-between gap-4 h-full">
+          {/* Left: name + subtitle */}
+          <div className="flex items-center gap-3 md:gap-4">
+            <span
+              className="text-[15px] uppercase leading-[22.5px]"
+              style={{
+                fontFamily: "var(--font-geist-mono)",
+                fontWeight: 500,
+                color: "#32404f",
+              }}
+            >
+              Gen Chang
+            </span>
+            <span
+              className="hidden lg:inline text-[15px] uppercase leading-[22.5px]"
+              style={{
+                fontFamily: "var(--font-geist-mono)",
+                fontWeight: 400,
+                color: "rgba(50,64,79,0.58)",
+              }}
+            >
+              Product Designer + professional dabbler
+            </span>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle navigation menu"
+            className="md:hidden text-[#32404f]"
           >
-            Gen Chang
-          </span>
-          <span
-            className="hidden lg:inline text-[15px] uppercase leading-[22.5px]"
-            style={{
-              fontFamily: "var(--font-geist-mono)",
-              fontWeight: 400,
-              color: "rgba(50,64,79,0.58)",
-            }}
-          >
-            Product Designer + professional dabbler
-          </span>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M3 7H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path d="M3 17H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
         </div>
 
         {/* Right: nav links */}
-        <MobileNav
-          items={[
-            { label: "Work", href: "/", active: true },
-            { label: "Side quests", href: "/side-quests" },
-            { label: "About", href: "/about" },
-            { label: "Email", href: "mailto:genchang1@gmail.com", external: true },
-            { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", external: true },
-          ]}
-        />
+        <div className={`${isMenuOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-x-8 md:gap-y-2 mt-3 md:mt-0`}>
+          {navLinks.map(({ label, href, active, external }) => (
+            <Link
+              key={label}
+              href={href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noopener noreferrer" : undefined}
+              onClick={() => setIsMenuOpen(false)}
+              className={`text-[15px] uppercase leading-[22.5px] cursor-pointer inline-flex items-center gap-1.5 transition-colors ${active ? "text-[#e65f2e]" : "text-[rgba(50,64,79,0.58)] hover:text-[#e65f2e]"}`}
+              style={{
+                fontFamily: "var(--font-geist-mono)",
+                fontWeight: 400,
+              }}
+            >
+              {label}
+              {external && <ExternalArrow />}
+            </Link>
+          ))}
+        </div>
       </nav>
 
       {/* Main content */}
@@ -86,14 +125,11 @@ export default function Home() {
           </div>
 
           {/* Right: work history */}
-          <div className="flex flex-col gap-3 md:gap-[2px] justify-end pb-1">
+          <div className="flex flex-col gap-4 justify-end pb-1">
             {workHistory.map((item) => (
-              <div
-                key={item.year}
-                className="flex items-start gap-6 md:gap-6"
-              >
+              <div key={`${item.year}-${item.company}`} className="grid grid-cols-[72px_1fr] md:grid-cols-[104px_1fr_1fr] items-start gap-x-4 md:gap-x-6 gap-y-1">
                 <span
-                  className="text-[15px] uppercase leading-[22.5px] min-w-[80px] md:min-w-[104px] shrink-0"
+                  className="text-[15px] leading-[22.5px] shrink-0"
                   style={{
                     fontFamily: "var(--font-geist-mono)",
                     fontWeight: 400,
@@ -102,28 +138,26 @@ export default function Home() {
                 >
                   {item.year}
                 </span>
-                <div className="flex flex-col md:flex-row md:flex-1 md:gap-6">
-                  <span
-                    className="text-[15px] leading-[22.5px] md:min-w-[282px] md:shrink-0"
-                    style={{
-                      fontFamily: "var(--font-geist-sans)",
-                      fontWeight: 400,
-                      color: "#32404f",
-                    }}
-                  >
-                    {item.company}
-                  </span>
-                  <span
-                    className="text-[15px] leading-[22.5px]"
-                    style={{
-                      fontFamily: "var(--font-geist-sans)",
-                      fontWeight: 400,
-                      color: "rgba(50,64,79,0.58)",
-                    }}
-                  >
-                    {item.role}
-                  </span>
-                </div>
+                <span
+                  className="text-[15px] leading-[22.5px]"
+                  style={{
+                    fontFamily: "var(--font-geist-sans)",
+                    fontWeight: 400,
+                    color: "#32404f",
+                  }}
+                >
+                  {item.company}
+                </span>
+                <span
+                  className="text-[15px] leading-[22.5px] col-start-2 md:col-start-auto"
+                  style={{
+                    fontFamily: "var(--font-geist-sans)",
+                    fontWeight: 400,
+                    color: "rgba(50,64,79,0.58)",
+                  }}
+                >
+                  {item.role}
+                </span>
               </div>
             ))}
           </div>
@@ -141,11 +175,15 @@ export default function Home() {
                 className="w-full bg-[#f4f7f9] overflow-hidden"
                 style={{ aspectRatio: "16 / 9" }}
               >
-                <HoverVideo src="/vitality.mp4" aria="Discovery Vitality project illustration" />
+                <HoverVideo
+                  src="/vitality.mp4"
+                  aria="Discovery Vitality project illustration"
+                  autoPlayOnMobile
+                />
               </div>
             </div>
             <div className="flex flex-col gap-3 pt-1">
-              <div className="flex flex-col md:flex-row md:flex-wrap md:items-baseline md:justify-between gap-y-1 md:gap-x-4">
+              <div className="flex flex-col items-start gap-1">
                 <span
                   className="text-[16px] tracking-[0.6px] text-[#32404f] leading-normal"
                   style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
@@ -153,12 +191,12 @@ export default function Home() {
                   Built Once, Shipped Everywhere
                 </span>
                 <span
-                  className="text-[13px] uppercase leading-[20px] md:ml-auto md:text-right"
+                  className="text-[13px] uppercase leading-[20px]"
                   style={{
                     fontFamily: "var(--font-geist-mono)",
                     fontWeight: 400,
                     color: "rgba(50,64,79,0.58)",
-                    letterSpacing: "0.3px",
+                    letterSpacing: "0.3px"
                   }}
                 >
                   Discovery Vitality • 2025
@@ -188,11 +226,15 @@ export default function Home() {
                 className="w-full bg-[#eff2f7] overflow-hidden"
                 style={{ aspectRatio: "16 / 9" }}
               >
-                <HoverVideo src="/bank.mp4" aria="Vision Bank project illustration" />
+                <HoverVideo
+                  src="/bank.mp4"
+                  aria="Vision Bank project illustration"
+                  autoPlayOnMobile
+                />
               </div>
             </div>
             <div className="flex flex-col gap-3 pt-1">
-              <div className="flex flex-col md:flex-row md:flex-wrap md:items-baseline md:justify-between gap-y-1 md:gap-x-4">
+              <div className="flex flex-col items-start gap-1">
                 <span
                   className="text-[16px] tracking-[0.6px] text-[#32404f] leading-normal"
                   style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
@@ -200,12 +242,12 @@ export default function Home() {
                   Designing the foundations of a digital bank
                 </span>
                 <span
-                  className="text-[13px] uppercase leading-[20px] md:ml-auto md:text-right"
+                  className="text-[13px] uppercase leading-[20px]"
                   style={{
                     fontFamily: "var(--font-geist-mono)",
                     fontWeight: 400,
                     color: "rgba(50,64,79,0.58)",
-                    letterSpacing: "0.3px",
+                    letterSpacing: "0.3px"
                   }}
                 >
                   Vision Bank • 2022

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import HoverVideo from "../HoverVideo";
 import Carousel from "../Carousel";
@@ -6,46 +9,82 @@ import SaFlagIcon from "../SaFlagIcon";
 import MobileNav from "../MobileNav";
 
 export default function SideQuestsPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navLinks = [
+    { label: "Work", href: "/", active: false, external: false },
+    { label: "Side quests", href: "/side-quests", active: true, external: false },
+    { label: "About", href: "/about", active: false, external: false },
+    { label: "Email", href: "mailto:genchang1@gmail.com", active: false, external: true },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", active: false, external: true },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navbar — matches home */}
       <nav
-        className="flex flex-wrap items-center justify-between px-4 md:px-6 py-3 md:py-0 md:h-16 gap-x-4 gap-y-2 shrink-0"
+        className="px-4 md:px-6 py-3 md:py-0 md:h-16 shrink-0"
         style={{ borderBottom: "1px solid rgba(50,64,79,0.1)" }}
       >
-        <div className="flex items-center gap-3 md:gap-4">
-          <Link
-            href="/"
-            className="text-[15px] uppercase leading-[22.5px]"
-            style={{
-              fontFamily: "var(--font-geist-mono)",
-              fontWeight: 500,
-              color: "#32404f",
-            }}
+        <div className="flex items-center justify-between gap-4 h-full">
+          <div className="flex items-center gap-3 md:gap-4">
+            <Link
+              href="/"
+              className="text-[15px] uppercase leading-[22.5px]"
+              style={{
+                fontFamily: "var(--font-geist-mono)",
+                fontWeight: 500,
+                color: "#32404f",
+              }}
+            >
+              Gen Chang
+            </Link>
+            <span
+              className="hidden lg:inline text-[15px] uppercase leading-[22.5px]"
+              style={{
+                fontFamily: "var(--font-geist-mono)",
+                fontWeight: 400,
+                color: "rgba(50,64,79,0.58)",
+              }}
+            >
+              Product Designer + professional dabbler
+            </span>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle navigation menu"
+            className="md:hidden text-[#32404f]"
           >
-            Gen Chang
-          </Link>
-          <span
-            className="hidden lg:inline text-[15px] uppercase leading-[22.5px]"
-            style={{
-              fontFamily: "var(--font-geist-mono)",
-              fontWeight: 400,
-              color: "rgba(50,64,79,0.58)",
-            }}
-          >
-            Product Designer + professional dabbler
-          </span>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M3 7H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path d="M3 17H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
         </div>
 
-        <MobileNav
-          items={[
-            { label: "Work", href: "/" },
-            { label: "Side quests", href: "/side-quests", active: true },
-            { label: "About", href: "/about" },
-            { label: "Email", href: "mailto:genchang1@gmail.com", external: true },
-            { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", external: true },
-          ]}
-        />
+        <div className={`${isMenuOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-x-8 md:gap-y-2 mt-3 md:mt-0`}>
+          {navLinks.map(({ label, href, active, external }) => (
+            <Link
+              key={label}
+              href={href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noopener noreferrer" : undefined}
+              onClick={() => setIsMenuOpen(false)}
+              className={`text-[15px] uppercase leading-[22.5px] cursor-pointer inline-flex items-center gap-1.5 transition-colors ${active ? "text-[#e65f2e]" : "text-[rgba(50,64,79,0.58)] hover:text-[#e65f2e]"}`}
+              style={{
+                fontFamily: "var(--font-geist-mono)",
+                fontWeight: 400,
+              }}
+            >
+              {label}
+              {external && <ExternalArrow />}
+            </Link>
+          ))}
+        </div>
       </nav>
 
       {/* Main content */}
