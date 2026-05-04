@@ -25,7 +25,7 @@ export default function SideQuestsPage() {
         className="px-4 md:px-6 py-3 md:py-0 md:h-16 shrink-0"
         style={{ borderBottom: "1px solid rgba(50,64,79,0.1)" }}
       >
-        <div className="flex items-center justify-between gap-4 h-full">
+        <div className="flex items-center justify-between gap-4 md:h-full">
           <div className="flex items-center gap-3 md:gap-4">
             <Link
               href="/"
@@ -50,6 +50,26 @@ export default function SideQuestsPage() {
             </span>
           </div>
 
+          {/* Desktop nav links */}
+          <div className="hidden md:flex items-center gap-x-6 lg:gap-x-8">
+            {navLinks.map(({ label, href, active, external }) => (
+              <Link
+                key={label}
+                href={href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
+                className={`text-[15px] uppercase leading-[22.5px] cursor-pointer inline-flex items-center gap-1.5 transition-colors ${active ? "text-[#e65f2e]" : "text-[rgba(50,64,79,0.58)] hover:text-[#e65f2e]"}`}
+                style={{
+                  fontFamily: "var(--font-geist-mono)",
+                  fontWeight: 400,
+                }}
+              >
+                {label}
+                {external && <ExternalArrow />}
+              </Link>
+            ))}
+          </div>
+
           <button
             type="button"
             onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -65,7 +85,8 @@ export default function SideQuestsPage() {
           </button>
         </div>
 
-        <div className={`${isMenuOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-x-8 md:gap-y-2 mt-3 md:mt-0`}>
+        {/* Mobile dropdown */}
+        <div className={`${isMenuOpen ? "flex" : "hidden"} md:hidden flex-col items-start gap-2 mt-3`}>
           {navLinks.map(({ label, href, active, external }) => (
             <Link
               key={label}
