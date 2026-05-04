@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import ExternalArrow from "../ExternalArrow";
 import SaFlagIcon from "../SaFlagIcon";
+import MobileNav from "../MobileNav";
 
 export default function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -152,7 +152,7 @@ export default function AboutPage() {
               style={{
                 width: "280px",
                 background: "#ffffff",
-                padding: "16px 16px 56px",
+                padding: "12px 12px 40px",
                 boxShadow:
                   "0 18px 32px -16px rgba(50,64,79,0.28), 0 6px 12px -8px rgba(50,64,79,0.18)",
                 transform: "rotate(2deg)",
@@ -165,8 +165,8 @@ export default function AboutPage() {
                   position: "absolute",
                   top: "-14px",
                   left: "-22px",
-                  width: "84px",
-                  height: "26px",
+                  width: "64px",
+                  height: "20px",
                   background:
                     "repeating-linear-gradient(135deg, rgba(255,235,150,0.78) 0 6px, rgba(255,225,120,0.78) 6px 12px)",
                   border: "1px solid rgba(180,150,40,0.18)",
@@ -181,8 +181,8 @@ export default function AboutPage() {
                   position: "absolute",
                   top: "-12px",
                   right: "-26px",
-                  width: "84px",
-                  height: "26px",
+                  width: "64px",
+                  height: "20px",
                   background:
                     "repeating-linear-gradient(135deg, rgba(255,235,150,0.78) 0 6px, rgba(255,225,120,0.78) 6px 12px)",
                   border: "1px solid rgba(180,150,40,0.18)",

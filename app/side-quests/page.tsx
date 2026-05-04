@@ -6,6 +6,7 @@ import HoverVideo from "../HoverVideo";
 import Carousel from "../Carousel";
 import StlViewer from "../StlViewer";
 import SaFlagIcon from "../SaFlagIcon";
+import MobileNav from "../MobileNav";
 
 export default function SideQuestsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
