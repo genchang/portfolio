@@ -1,52 +1,92 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import ExternalArrow from "../ExternalArrow";
 import SaFlagIcon from "../SaFlagIcon";
 
 export default function AboutPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navLinks = [
+    { label: "Work", href: "/", active: false, external: false },
+    { label: "Side quests", href: "/side-quests", active: false, external: false },
+    { label: "About", href: "/about", active: true, external: false },
+    { label: "Email", href: "mailto:genchang1@gmail.com", active: false, external: true },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", active: false, external: true },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navbar — matches home */}
       <nav
-        className="flex flex-wrap items-center justify-between px-4 md:px-6 py-3 md:py-0 md:h-16 gap-x-4 gap-y-2 shrink-0"
+        className="px-4 md:px-6 py-3 md:py-0 md:h-16 shrink-0"
         style={{ borderBottom: "1px solid rgba(50,64,79,0.1)" }}
       >
-        <div className="flex items-center gap-3 md:gap-4">
-          <Link
-            href="/"
-            className="text-[15px] uppercase leading-[22.5px]"
-            style={{
-              fontFamily: "var(--font-geist-mono)",
-              fontWeight: 500,
-              color: "#32404f",
-            }}
+        <div className="flex items-center justify-between gap-4 h-full">
+          <div className="flex items-center gap-3 md:gap-4">
+            <Link
+              href="/"
+              className="text-[15px] uppercase leading-[22.5px]"
+              style={{
+                fontFamily: "var(--font-geist-mono)",
+                fontWeight: 500,
+                color: "#32404f",
+              }}
+            >
+              Gen Chang
+            </Link>
+            <span
+              className="hidden lg:inline text-[15px] uppercase leading-[22.5px]"
+              style={{
+                fontFamily: "var(--font-geist-mono)",
+                fontWeight: 400,
+                color: "rgba(50,64,79,0.58)",
+              }}
+            >
+              Product Designer + professional dabbler
+            </span>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle navigation menu"
+            className="md:hidden text-[#32404f]"
           >
-            Gen Chang
-          </Link>
-          <span
-            className="hidden lg:inline text-[15px] uppercase leading-[22.5px]"
-            style={{
-              fontFamily: "var(--font-geist-mono)",
-              fontWeight: 400,
-              color: "rgba(50,64,79,0.58)",
-            }}
-          >
-            Product Designer + professional dabbler
-          </span>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M3 7H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path d="M3 17H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+
+          <div className="hidden md:flex flex-wrap items-center gap-x-8 gap-y-2">
+            {navLinks.map(({ label, href, active, external }) => (
+              <Link
+                key={`desktop-${label}`}
+                href={href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
+                className={`text-[15px] uppercase leading-[22.5px] cursor-pointer inline-flex items-center gap-1.5 transition-colors ${active ? "text-[#e65f2e]" : "text-[rgba(50,64,79,0.58)] hover:text-[#e65f2e]"}`}
+                style={{ fontFamily: "var(--font-geist-mono)", fontWeight: 400 }}
+              >
+                {label}
+                {external && <ExternalArrow />}
+              </Link>
+            ))}
+          </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-2">
-          {[
-            { label: "Work", href: "/", active: false, external: false },
-            { label: "Side quests", href: "/side-quests", active: false, external: false },
-            { label: "About", href: "/about", active: true, external: false },
-            { label: "Email", href: "mailto:genchang1@gmail.com", active: false, external: true },
-            { label: "LinkedIn", href: "https://www.linkedin.com/in/genchang/", active: false, external: true },
-          ].map(({ label, href, active, external }) => (
+        <div className={`${isMenuOpen ? "flex" : "hidden"} md:hidden flex-col items-start gap-2 mt-3`}>
+          {navLinks.map(({ label, href, active, external }) => (
             <Link
               key={label}
               href={href}
               target={external ? "_blank" : undefined}
               rel={external ? "noopener noreferrer" : undefined}
+              onClick={() => setIsMenuOpen(false)}
               className={`text-[15px] uppercase leading-[22.5px] cursor-pointer inline-flex items-center gap-1.5 transition-colors ${active ? "text-[#e65f2e]" : "text-[rgba(50,64,79,0.58)] hover:text-[#e65f2e]"}`}
               style={{
                 fontFamily: "var(--font-geist-mono)",
@@ -62,9 +102,9 @@ export default function AboutPage() {
 
       {/* Main content */}
       <main className="flex-1 px-4 md:px-6">
-        <section className="pt-8 md:pt-12 pb-12 max-w-[1100px]">
-          <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-12 items-start">
-            <div className="flex-1 max-w-[640px]">
+        <section className="pt-8 md:pt-12 pb-12 max-w-[900px]">
+          <div className="flex flex-col gap-8 md:gap-10 items-start">
+            <div className="max-w-[640px]">
               <h1
                 className="text-[36px] leading-[42px] md:text-[49.9px] md:leading-[57.2px] tracking-[-0.34px] text-[#32404f] mb-8 md:mb-10"
                 style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
@@ -124,9 +164,9 @@ export default function AboutPage() {
             </div>
 
             <div
-              className="relative shrink-0 ml-auto"
+              className="relative"
               style={{
-                width: "320px",
+                width: "280px",
                 background: "#ffffff",
                 padding: "16px 16px 56px",
                 boxShadow:
