@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import SaFlagIcon from "../SaFlagIcon";
-import MobileNav from "../MobileNav";
+import ExternalArrow from "../ExternalArrow";
 
 export default function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
