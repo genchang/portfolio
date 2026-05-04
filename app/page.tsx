@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import HoverVideo from "./HoverVideo";
 import SaFlagIcon from "./SaFlagIcon";
-import MobileNav from "./MobileNav";
+import ExternalArrow from "./ExternalArrow";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
