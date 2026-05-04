@@ -63,25 +63,9 @@ export default function SideQuestsPage() {
               <path d="M3 17H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </button>
-
-          <div className="hidden md:flex flex-wrap items-center gap-x-8 gap-y-2">
-            {navLinks.map(({ label, href, active, external }) => (
-              <Link
-                key={`desktop-${label}`}
-                href={href}
-                target={external ? "_blank" : undefined}
-                rel={external ? "noopener noreferrer" : undefined}
-                className={`text-[15px] uppercase leading-[22.5px] cursor-pointer inline-flex items-center gap-1.5 transition-colors ${active ? "text-[#e65f2e]" : "text-[rgba(50,64,79,0.58)] hover:text-[#e65f2e]"}`}
-                style={{ fontFamily: "var(--font-geist-mono)", fontWeight: 400 }}
-              >
-                {label}
-                {external && <ExternalArrow />}
-              </Link>
-            ))}
-          </div>
         </div>
 
-        <div className={`${isMenuOpen ? "flex" : "hidden"} md:hidden flex-col items-start gap-2 mt-3`}>
+        <div className={`${isMenuOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-x-8 md:gap-y-2 mt-3 md:mt-0`}>
           {navLinks.map(({ label, href, active, external }) => (
             <Link
               key={label}
