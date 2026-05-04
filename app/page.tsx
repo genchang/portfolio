@@ -31,11 +31,11 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       {/* Navbar */}
       <nav
-        className="flex items-center justify-between px-6 h-16 shrink-0"
+        className="flex flex-wrap items-center justify-between px-4 md:px-6 py-3 md:py-0 md:h-16 gap-x-4 gap-y-2 shrink-0"
         style={{ borderBottom: "1px solid rgba(50,64,79,0.1)" }}
       >
         {/* Left: name + subtitle */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 md:gap-4">
           <span
             className="text-[15px] uppercase leading-[22.5px]"
             style={{
@@ -47,7 +47,7 @@ export default function Home() {
             Gen Chang
           </span>
           <span
-            className="text-[15px] uppercase leading-[22.5px]"
+            className="hidden lg:inline text-[15px] uppercase leading-[22.5px]"
             style={{
               fontFamily: "var(--font-geist-mono)",
               fontWeight: 400,
@@ -59,7 +59,7 @@ export default function Home() {
         </div>
 
         {/* Right: nav links */}
-        <div className="flex items-center gap-8">
+        <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-2">
           {[
             { label: "Work", href: "/", active: true, external: false },
             { label: "Side quests", href: "/side-quests", active: false, external: false },
@@ -86,13 +86,13 @@ export default function Home() {
       </nav>
 
       {/* Main content */}
-      <main className="flex-1 px-6">
+      <main className="flex-1 px-4 md:px-6">
         {/* Hero section */}
-        <section className="grid grid-cols-2 gap-6 pt-[180px] pb-8">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 pt-16 md:pt-[180px] pb-8">
           {/* Left: heading */}
           <div className="max-w-[700px]">
             <h1
-              className="text-[49.9px] leading-[57.2px] tracking-[-0.34px] text-[#32404f]"
+              className="text-[36px] leading-[42px] md:text-[49.9px] md:leading-[57.2px] tracking-[-0.34px] text-[#32404f]"
               style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
             >
               I&apos;m Gen. Product designer by trade,{" "}
@@ -103,9 +103,9 @@ export default function Home() {
           {/* Right: work history */}
           <div className="flex flex-col gap-[2px] justify-end pb-1">
             {workHistory.map((item) => (
-              <div key={item.year} className="flex items-start gap-6">
+              <div key={item.year} className="flex flex-wrap items-start gap-x-4 md:gap-x-6 gap-y-1">
                 <span
-                  className="text-[15px] uppercase leading-[22.5px] min-w-[104px] shrink-0"
+                  className="text-[15px] uppercase leading-[22.5px] min-w-[80px] md:min-w-[104px] shrink-0"
                   style={{
                     fontFamily: "var(--font-geist-mono)",
                     fontWeight: 400,
@@ -115,7 +115,7 @@ export default function Home() {
                   {item.year}
                 </span>
                 <span
-                  className="text-[15px] leading-[22.5px] min-w-[282px] shrink-0"
+                  className="text-[15px] leading-[22.5px] md:min-w-[282px] md:shrink-0"
                   style={{
                     fontFamily: "var(--font-geist-sans)",
                     fontWeight: 400,
@@ -140,7 +140,7 @@ export default function Home() {
         </section>
 
         {/* Project cards */}
-        <section className="grid grid-cols-2 gap-6">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6">
           {/* Card 1 — Discovery Vitality */}
           <Link href="/vitality" className="flex flex-col gap-2 group">
             <div
@@ -240,7 +240,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer
-        className="flex items-center justify-between px-6 py-[20px] mt-8"
+        className="flex items-center justify-between px-4 md:px-6 py-[20px] mt-8"
         style={{ borderTop: "1px solid rgba(50,64,79,0.1)" }}
       >
         {/* Left: credit */}

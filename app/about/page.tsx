@@ -7,10 +7,10 @@ export default function AboutPage() {
     <div className="min-h-screen flex flex-col">
       {/* Navbar — matches home */}
       <nav
-        className="flex items-center justify-between px-6 h-16 shrink-0"
+        className="flex flex-wrap items-center justify-between px-4 md:px-6 py-3 md:py-0 md:h-16 gap-x-4 gap-y-2 shrink-0"
         style={{ borderBottom: "1px solid rgba(50,64,79,0.1)" }}
       >
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 md:gap-4">
           <Link
             href="/"
             className="text-[15px] uppercase leading-[22.5px]"
@@ -23,7 +23,7 @@ export default function AboutPage() {
             Gen Chang
           </Link>
           <span
-            className="text-[15px] uppercase leading-[22.5px]"
+            className="hidden lg:inline text-[15px] uppercase leading-[22.5px]"
             style={{
               fontFamily: "var(--font-geist-mono)",
               fontWeight: 400,
@@ -34,7 +34,7 @@ export default function AboutPage() {
           </span>
         </div>
 
-        <div className="flex items-center gap-8">
+        <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-2">
           {[
             { label: "Work", href: "/", active: false, external: false },
             { label: "Side quests", href: "/side-quests", active: false, external: false },
@@ -61,12 +61,12 @@ export default function AboutPage() {
       </nav>
 
       {/* Main content */}
-      <main className="flex-1 px-6">
-        <section className="pt-12 pb-12 max-w-[1100px]">
-          <div className="flex flex-row gap-12 items-start">
+      <main className="flex-1 px-4 md:px-6">
+        <section className="pt-8 md:pt-12 pb-12 max-w-[1100px]">
+          <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-12 items-start">
             <div className="flex-1 max-w-[640px]">
               <h1
-                className="text-[49.9px] leading-[57.2px] tracking-[-0.34px] text-[#32404f] mb-10"
+                className="text-[36px] leading-[42px] md:text-[49.9px] md:leading-[57.2px] tracking-[-0.34px] text-[#32404f] mb-8 md:mb-10"
                 style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
               >
                 I am a designer, hobbyist, and{" "}

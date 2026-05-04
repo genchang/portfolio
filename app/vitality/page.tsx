@@ -15,21 +15,39 @@ const INDEX_ITEMS = [
 export default function VitalityCaseStudy() {
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="flex-1 grid grid-cols-[220px_1fr] gap-8">
-        {/* Sticky left index */}
-        <aside className="px-6 pt-10">
+      <div className="flex-1 md:grid md:grid-cols-[220px_1fr] md:gap-8">
+        {/* Sticky left index — hidden on mobile */}
+        <aside className="hidden md:block px-6 pt-10">
           <div className="sticky top-10">
             <CaseStudyIndex items={INDEX_ITEMS} backHref="/" backLabel="Back" />
           </div>
         </aside>
 
+        {/* Mobile back link */}
+        <div className="md:hidden px-4 pt-6">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.5px]"
+            style={{
+              fontFamily: "var(--font-geist-mono)",
+              fontWeight: 500,
+              color: "#32404f",
+            }}
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M9 3L4 7l5 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Back
+          </Link>
+        </div>
+
         <main className="min-w-0">
           {/* Hero / title block */}
           <section
             id="overview"
-            className="px-6 pt-10 pb-16 max-w-[900px] w-full scroll-mt-10"
+            className="px-4 md:px-6 pt-6 md:pt-10 pb-16 max-w-[900px] w-full scroll-mt-10"
           >
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-8">
             {["Product Designer", "2.5 years", "Figma", "Android", "iOS"].map(
               (tag) => (
                 <span
@@ -50,14 +68,14 @@ export default function VitalityCaseStudy() {
           </div>
 
           <h1
-            className="text-[64px] leading-[72px] tracking-[-0.5px] text-[#32404f] mb-8"
+            className="text-[44px] leading-[52px] md:text-[64px] md:leading-[72px] tracking-[-0.5px] text-[#32404f] mb-6 md:mb-8"
             style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
           >
             Vitality
           </h1>
 
           <p
-            className="text-[22px] leading-[32px] text-[#32404f] max-w-[720px]"
+            className="text-[18px] leading-[28px] md:text-[22px] md:leading-[32px] text-[#32404f] max-w-[720px]"
             style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
           >
             Redesigning a global rewards experience used across multiple
@@ -70,7 +88,7 @@ export default function VitalityCaseStudy() {
         </section>
 
         {/* Hero video — reuse vitality hover video as the opening artefact */}
-        <section className="px-6 pb-24">
+        <section className="px-4 md:px-6 pb-16 md:pb-24">
           <div className="max-w-[900px] w-full">
             <div
               className="w-full bg-[#f4f7f9] overflow-hidden"
@@ -95,7 +113,7 @@ export default function VitalityCaseStudy() {
         </section>
 
         {/* Body sections */}
-        <div className="max-w-[900px] w-full px-6 flex flex-col gap-24 pb-24">
+        <div className="max-w-[900px] w-full px-4 md:px-6 flex flex-col gap-16 md:gap-24 pb-16 md:pb-24">
           <section id="context" className="scroll-mt-10">
             <div
               className="text-[13px] uppercase leading-[20px] mb-4"
@@ -109,7 +127,7 @@ export default function VitalityCaseStudy() {
               01 — Context
             </div>
             <h2
-              className="text-[36px] leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
+              className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
               style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
             >
               What I walked into
@@ -186,7 +204,7 @@ export default function VitalityCaseStudy() {
               02 — Building the spine
             </div>
             <h2
-              className="text-[36px] leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
+              className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
               style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
             >
               Building structure that could scale
@@ -343,7 +361,7 @@ export default function VitalityCaseStudy() {
               03 — Teaching, not explaining
             </div>
             <h2
-              className="text-[36px] leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
+              className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
               style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
             >
               Making complicated information easier to understand
@@ -438,7 +456,7 @@ export default function VitalityCaseStudy() {
               </p>
             </div>
 
-            <figure className="flex flex-row items-end gap-8 mt-10">
+            <figure className="flex flex-col md:flex-row md:items-end gap-6 md:gap-8 mt-10">
               <div
                 className="bg-[#f4f7f9] overflow-hidden shrink-0"
                 style={{
@@ -494,7 +512,7 @@ export default function VitalityCaseStudy() {
               04 — Designing for adaptation
             </div>
             <h2
-              className="text-[36px] leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
+              className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
               style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
             >
               Making AI-driven goals feel understandable
@@ -624,7 +642,7 @@ export default function VitalityCaseStudy() {
               </p>
             </div>
 
-            <figure className="flex flex-row items-end gap-8 mt-10">
+            <figure className="flex flex-col md:flex-row md:items-end gap-6 md:gap-8 mt-10">
               <div
                 className="bg-[#f4f7f9] overflow-hidden shrink-0"
                 style={{
@@ -664,7 +682,7 @@ export default function VitalityCaseStudy() {
               </figcaption>
             </figure>
 
-            <figure className="flex flex-row items-end gap-8 mt-10">
+            <figure className="flex flex-col md:flex-row md:items-end gap-6 md:gap-8 mt-10">
               <div
                 className="bg-[#f4f7f9] overflow-hidden shrink-0"
                 style={{
@@ -719,7 +737,7 @@ export default function VitalityCaseStudy() {
               05 — Impact
             </div>
             <h2
-              className="text-[36px] leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
+              className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
               style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
             >
               Designing for scale across markets
@@ -809,7 +827,7 @@ export default function VitalityCaseStudy() {
               06 — Reflection
             </div>
             <h2
-              className="text-[36px] leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
+              className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
               style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
             >
               Designing for systems, not just screens

@@ -14,21 +14,39 @@ const INDEX_ITEMS = [
 export default function VisionBankCaseStudy() {
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="flex-1 grid grid-cols-[220px_1fr] gap-8">
-        {/* Sticky left index */}
-        <aside className="px-6 pt-10">
+      <div className="flex-1 md:grid md:grid-cols-[220px_1fr] md:gap-8">
+        {/* Sticky left index — hidden on mobile */}
+        <aside className="hidden md:block px-6 pt-10">
           <div className="sticky top-10">
             <CaseStudyIndex items={INDEX_ITEMS} backHref="/" backLabel="Back" />
           </div>
         </aside>
 
+        {/* Mobile back link */}
+        <div className="md:hidden px-4 pt-6">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.5px]"
+            style={{
+              fontFamily: "var(--font-geist-mono)",
+              fontWeight: 500,
+              color: "#32404f",
+            }}
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M9 3L4 7l5 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Back
+          </Link>
+        </div>
+
         <main className="min-w-0">
           {/* Hero / title block */}
           <section
             id="overview"
-            className="px-6 pt-10 pb-16 max-w-[900px] w-full scroll-mt-10"
+            className="px-4 md:px-6 pt-6 md:pt-10 pb-16 max-w-[900px] w-full scroll-mt-10"
           >
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-8">
               {[
                 "UX/UI Designer",
                 "9 months",
@@ -53,14 +71,14 @@ export default function VisionBankCaseStudy() {
             </div>
 
             <h1
-              className="text-[64px] leading-[72px] tracking-[-0.5px] text-[#32404f] mb-8"
+              className="text-[44px] leading-[52px] md:text-[64px] md:leading-[72px] tracking-[-0.5px] text-[#32404f] mb-6 md:mb-8"
               style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
             >
               Vision Bank
             </h1>
 
             <p
-              className="text-[22px] leading-[32px] text-[#32404f] max-w-[720px]"
+              className="text-[18px] leading-[28px] md:text-[22px] md:leading-[32px] text-[#32404f] max-w-[720px]"
               style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
             >
               Designing a scalable digital banking experience for{" "}
@@ -71,7 +89,7 @@ export default function VisionBankCaseStudy() {
           </section>
 
           {/* Hero image */}
-          <section className="px-6 pb-24">
+          <section className="px-4 md:px-6 pb-16 md:pb-24">
             <div className="max-w-[900px] w-full">
               <div
                 className="w-full bg-[#eff2f7] overflow-hidden"
@@ -96,7 +114,7 @@ export default function VisionBankCaseStudy() {
           </section>
 
           {/* Body sections */}
-          <div className="max-w-[900px] w-full px-6 flex flex-col gap-24 pb-24">
+          <div className="max-w-[900px] w-full px-4 md:px-6 flex flex-col gap-16 md:gap-24 pb-16 md:pb-24">
             {/* 01 — Context */}
             <section id="context" className="scroll-mt-10">
               <div
@@ -111,7 +129,7 @@ export default function VisionBankCaseStudy() {
                 01 — Context
               </div>
               <h2
-                className="text-[36px] leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
+                className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
                 style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
               >
                 Helping shape a fully digital bank
@@ -186,7 +204,7 @@ export default function VisionBankCaseStudy() {
                 02 — Customer journeys
               </div>
               <h2
-                className="text-[36px] leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
+                className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
                 style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
               >
                 Analysing customer journeys
@@ -366,7 +384,7 @@ export default function VisionBankCaseStudy() {
                 03 — Concepts & prototyping
               </div>
               <h2
-                className="text-[36px] leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
+                className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
                 style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
               >
                 Visualising through concepts and prototyping
@@ -537,7 +555,7 @@ export default function VisionBankCaseStudy() {
                 04 — Design system
               </div>
               <h2
-                className="text-[36px] leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
+                className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
                 style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
               >
                 Strategising a multi-product design system library
@@ -724,7 +742,7 @@ export default function VisionBankCaseStudy() {
                 05 — Impact
               </div>
               <h2
-                className="text-[36px] leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
+                className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
                 style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
               >
                 Building consistency across products
@@ -814,7 +832,7 @@ export default function VisionBankCaseStudy() {
           </div>
 
           {/* Next / back link */}
-          <section className="px-6 pb-24 max-w-[900px] w-full">
+          <section className="px-4 md:px-6 pb-16 md:pb-24 max-w-[900px] w-full">
             <Link
               href="/"
               className="flex items-center gap-2 text-[15px] uppercase leading-[22.5px]"
