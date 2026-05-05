@@ -1,27 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Floppy ears (dark, behind face) -->
-  <path d="M5 11 C 4 16 6 22 9 23 L 11 14 Z" fill="#3a3431" />
-  <path d="M27 11 C 28 16 26 22 23 23 L 21 14 Z" fill="#3a3431" />
-  <!-- Top hair tuft (silky topknot) -->
-  <path d="M11 8 C 12 4 20 4 21 8 C 21 11 11 11 11 8 Z" fill="#3a3431" />
-  <!-- Face (tan body) -->
-  <ellipse cx="16" cy="18" rx="10" ry="9.5" fill="#c89372" />
-  <!-- Snout / lighter muzzle area -->
-  <ellipse cx="16" cy="21" rx="5" ry="4" fill="#e3b990" />
-  <!-- Dark forehead fringe -->
-  <path d="M9 12 C 11 10 13 10 16 11 C 19 10 21 10 23 12 C 21 14 19 13 16 12.5 C 13 13 11 14 9 12 Z" fill="#3a3431" />
+  <!-- Ears (triangular, dark) -->
+  <path d="M5 9 L 7 21 L 12 13 Z" fill="#42352c" />
+  <path d="M27 9 L 25 21 L 20 13 Z" fill="#42352c" />
+  <!-- Inner ear (pink) -->
+  <path d="M7 11 L 8 18 L 10 14 Z" fill="#d99a86" />
+  <path d="M25 11 L 24 18 L 22 14 Z" fill="#d99a86" />
+  <!-- Head — top half dark fur -->
+  <path d="M8 17 C 8 9 24 9 24 17 L 24 18 L 8 18 Z" fill="#42352c" />
+  <!-- Lower face — tan -->
+  <path d="M8 17 C 8 26 24 26 24 17 Z" fill="#d6a37c" />
+  <!-- Bib (lighter tan stripe down chin) -->
+  <ellipse cx="16" cy="23" rx="3" ry="2.5" fill="#ecc699" />
   <!-- Eyes -->
-  <circle cx="12" cy="17" r="1.5" fill="#1f1f1f" />
-  <circle cx="20" cy="17" r="1.5" fill="#1f1f1f" />
+  <circle cx="12" cy="17" r="1.9" fill="#1a1612" />
+  <circle cx="20" cy="17" r="1.9" fill="#1a1612" />
   <!-- Eye shine -->
-  <circle cx="12.4" cy="16.6" r="0.45" fill="#ffffff" />
-  <circle cx="20.4" cy="16.6" r="0.45" fill="#ffffff" />
+  <circle cx="12.6" cy="16.4" r="0.55" fill="#ffffff" />
+  <circle cx="20.6" cy="16.4" r="0.55" fill="#ffffff" />
   <!-- Nose -->
-  <ellipse cx="16" cy="20" rx="1.4" ry="1" fill="#1f1f1f" />
+  <ellipse cx="16" cy="20.5" rx="1.6" ry="1.2" fill="#1a1612" />
+  <!-- Nose highlight -->
+  <ellipse cx="15.6" cy="20.2" rx="0.4" ry="0.3" fill="#ffffff" opacity="0.6" />
   <!-- Mouth -->
-  <path d="M16 21.2 V 22.5" stroke="#1f1f1f" stroke-width="0.7" stroke-linecap="round" />
-  <path d="M16 22.5 Q 14.5 23.7 13.4 22.8" stroke="#1f1f1f" stroke-width="0.7" stroke-linecap="round" fill="none" />
-  <path d="M16 22.5 Q 17.5 23.7 18.6 22.8" stroke="#1f1f1f" stroke-width="0.7" stroke-linecap="round" fill="none" />
-  <!-- Tiny pink tongue -->
-  <ellipse cx="16" cy="23.6" rx="0.9" ry="0.5" fill="#ff8a8a" />
+  <path d="M16 21.7 V 22.6 Q 14.8 23.6 14 22.8" stroke="#1a1612" stroke-width="0.85" stroke-linecap="round" fill="none" />
+  <path d="M16 22.6 Q 17.2 23.6 18 22.8" stroke="#1a1612" stroke-width="0.85" stroke-linecap="round" fill="none" />
+  <!-- Pink bow on top -->
+  <path d="M14 9 L 16 11 L 18 9 L 18 11 L 16 11 L 14 11 Z" fill="#ff7fa8" />
+  <circle cx="16" cy="10.5" r="0.6" fill="#ff5d8f" />
 </svg>
