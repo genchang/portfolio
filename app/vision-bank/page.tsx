@@ -15,7 +15,7 @@ export default function VisionBankCaseStudy() {
   return (
     <div className="min-h-screen flex flex-col">
       <div className="flex-1 md:grid md:grid-cols-[220px_1fr] md:gap-8">
-        {/* Sticky left index — hidden on mobile */}
+        {/* Sticky left index - hidden on mobile */}
         <aside className="hidden md:block px-6 pt-10">
           <div className="sticky top-10">
             <CaseStudyIndex items={INDEX_ITEMS} backHref="/" backLabel="Back" />
@@ -115,7 +115,7 @@ export default function VisionBankCaseStudy() {
 
           {/* Body sections */}
           <div className="max-w-[900px] w-full px-4 md:px-6 flex flex-col gap-16 md:gap-24 pb-16 md:pb-24">
-            {/* 01 — Context */}
+            {/* 01 - Context */}
             <section id="context" className="scroll-mt-10">
               <div
                 className="text-[13px] uppercase leading-[20px] mb-4"
@@ -126,7 +126,7 @@ export default function VisionBankCaseStudy() {
                   letterSpacing: "0.5px",
                 }}
               >
-                01 — Context
+                01 - Context
               </div>
               <h2
                 className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
@@ -157,7 +157,7 @@ export default function VisionBankCaseStudy() {
                 </p>
                 <p>
                   Over the course of nine months, I worked across multiple
-                  streams of the product — from analysing customer journeys
+                  streams of the product - from analysing customer journeys
                   and defining UI patterns to building concept prototypes
                   and contributing to a multi-product design system library.
                 </p>
@@ -190,7 +190,7 @@ export default function VisionBankCaseStudy() {
               </ul>
             </section>
 
-            {/* 02 — Mapping the journey */}
+            {/* 02 - Mapping the journey */}
             <section id="mapping-the-journey" className="scroll-mt-10">
               <div
                 className="text-[13px] uppercase leading-[20px] mb-4"
@@ -201,7 +201,7 @@ export default function VisionBankCaseStudy() {
                   letterSpacing: "0.5px",
                 }}
               >
-                02 — Customer journeys
+                02 - Customer journeys
               </div>
               <h2
                 className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
@@ -338,7 +338,7 @@ export default function VisionBankCaseStudy() {
 
               <Pullquote>
                 Without strong alignment upfront, the design process became
-                more reactive than iterative — with time often spent
+                more reactive than iterative - with time often spent
                 resolving planning gaps that should have been clarified
                 before design tasks began.
               </Pullquote>
@@ -370,7 +370,7 @@ export default function VisionBankCaseStudy() {
               </figure>
             </section>
 
-            {/* 03 — Visualising the future */}
+            {/* 03 - Visualising the future */}
             <section id="visualising-the-future" className="scroll-mt-10">
               <div
                 className="text-[13px] uppercase leading-[20px] mb-4"
@@ -381,7 +381,7 @@ export default function VisionBankCaseStudy() {
                   letterSpacing: "0.5px",
                 }}
               >
-                03 — Concepts & prototyping
+                03 - Concepts & prototyping
               </div>
               <h2
                 className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
@@ -541,7 +541,7 @@ export default function VisionBankCaseStudy() {
               </figure>
             </section>
 
-            {/* 04 — Building the foundations */}
+            {/* 04 - Building the foundations */}
             <section id="foundations" className="scroll-mt-10">
               <div
                 className="text-[13px] uppercase leading-[20px] mb-4"
@@ -552,7 +552,7 @@ export default function VisionBankCaseStudy() {
                   letterSpacing: "0.5px",
                 }}
               >
-                04 — Design system
+                04 - Design system
               </div>
               <h2
                 className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
@@ -703,7 +703,7 @@ export default function VisionBankCaseStudy() {
                 <p>
                   It strengthened my understanding of scalable component
                   architecture, documentation practices, and systems
-                  thinking — and ultimately sparked my long-term interest
+                  thinking - and ultimately sparked my long-term interest
                   in specialising further within design systems and
                   scalable product design.
                 </p>
@@ -728,7 +728,7 @@ export default function VisionBankCaseStudy() {
               </figure>
             </section>
 
-            {/* 05 — Impact */}
+            {/* 05 - Impact */}
             <section id="impact" className="scroll-mt-10">
               <div
                 className="text-[13px] uppercase leading-[20px] mb-4"
@@ -739,7 +739,7 @@ export default function VisionBankCaseStudy() {
                   letterSpacing: "0.5px",
                 }}
               >
-                05 — Impact
+                05 - Impact
               </div>
               <h2
                 className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
@@ -849,7 +849,7 @@ export default function VisionBankCaseStudy() {
         </main>
       </div>
 
-      {/* Footer — matches home */}
+      {/* Footer - matches home */}
       <footer
         className="flex items-center justify-between px-6 py-[20px]"
         style={{ borderTop: "1px solid rgba(50,64,79,0.1)" }}

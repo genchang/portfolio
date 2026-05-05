@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Ears (triangular, dark) -->
+  <path d="M5 9 L 7 21 L 12 13 Z" fill="#42352c" />
+  <path d="M27 9 L 25 21 L 20 13 Z" fill="#42352c" />
+  <!-- Inner ear (pink) -->
+  <path d="M7 11 L 8 18 L 10 14 Z" fill="#d99a86" />
+  <path d="M25 11 L 24 18 L 22 14 Z" fill="#d99a86" />
+  <!-- Head — top half dark fur -->
+  <path d="M8 17 C 8 9 24 9 24 17 L 24 18 L 8 18 Z" fill="#42352c" />
+  <!-- Lower face — tan -->
+  <path d="M8 17 C 8 26 24 26 24 17 Z" fill="#d6a37c" />
+  <!-- Bib (lighter tan stripe down chin) -->
+  <ellipse cx="16" cy="23" rx="3" ry="2.5" fill="#ecc699" />
+  <!-- Eyes -->
+  <circle cx="12" cy="17" r="1.9" fill="#1a1612" />
+  <circle cx="20" cy="17" r="1.9" fill="#1a1612" />
+  <!-- Eye shine -->
+  <circle cx="12.6" cy="16.4" r="0.55" fill="#ffffff" />
+  <circle cx="20.6" cy="16.4" r="0.55" fill="#ffffff" />
+  <!-- Nose -->
+  <ellipse cx="16" cy="20.5" rx="1.6" ry="1.2" fill="#1a1612" />
+  <!-- Nose highlight -->
+  <ellipse cx="15.6" cy="20.2" rx="0.4" ry="0.3" fill="#ffffff" opacity="0.6" />
+  <!-- Mouth -->
+  <path d="M16 21.7 V 22.6 Q 14.8 23.6 14 22.8" stroke="#1a1612" stroke-width="0.85" stroke-linecap="round" fill="none" />
+  <path d="M16 22.6 Q 17.2 23.6 18 22.8" stroke="#1a1612" stroke-width="0.85" stroke-linecap="round" fill="none" />
+  <!-- Pink bow on top -->
+  <path d="M14 9 L 16 11 L 18 9 L 18 11 L 16 11 L 14 11 Z" fill="#ff7fa8" />
+  <circle cx="16" cy="10.5" r="0.6" fill="#ff5d8f" />
+</svg>

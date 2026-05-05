@@ -18,7 +18,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Navbar — matches home */}
+      {/* Navbar - matches home */}
       <nav
         className="px-4 md:px-6 py-3 md:py-0 md:h-16 shrink-0"
         style={{ borderBottom: "1px solid rgba(50,64,79,0.1)" }}
@@ -128,7 +128,7 @@ export default function AboutPage() {
               >
                 <p>
                 I&apos;m a UX/UI designer who loves solving problems through
-                thoughtful, playful design — whether that&apos;s crafting
+                thoughtful, playful design - whether that&apos;s crafting
                 end-to-end product flows, refining and building design
                 systems from scratch, or accidentally turning tiny ideas
                 into fully functional side projects. Lately I&apos;ve been
@@ -222,7 +222,7 @@ export default function AboutPage() {
         </section>
       </main>
 
-      {/* Footer — matches home */}
+      {/* Footer - matches home */}
       <footer
         className="flex items-center justify-between px-6 py-[20px] mt-8"
         style={{ borderTop: "1px solid rgba(50,64,79,0.1)" }}

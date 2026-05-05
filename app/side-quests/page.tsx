@@ -20,7 +20,7 @@ export default function SideQuestsPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Navbar — matches home */}
+      {/* Navbar - matches home */}
       <nav
         className="px-4 md:px-6 py-3 md:py-0 md:h-16 shrink-0"
         style={{ borderBottom: "1px solid rgba(50,64,79,0.1)" }}
@@ -128,7 +128,7 @@ export default function SideQuestsPage() {
             }}
           >
             This is where my curiosity turns into side projects that let me
-            explore new tools, technologies, and creative rabbit holes —
+            explore new tools, technologies, and creative rabbit holes -
             somewhere between inspiration, experimentation, and avoiding
             sleep.
           </p>
@@ -136,7 +136,7 @@ export default function SideQuestsPage() {
 
         {/* Side quest cards */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6">
-          {/* Card 1 — Life Timeline */}
+          {/* Card 1 - Life Timeline */}
           <div className="flex flex-col gap-2">
             <div
               className="w-full overflow-hidden"
@@ -194,7 +194,7 @@ export default function SideQuestsPage() {
             </div>
           </div>
 
-          {/* Card 2 — Dotty */}
+          {/* Card 2 - Dotty */}
           <div className="flex flex-col gap-2">
             <div
               className="w-full overflow-hidden"
@@ -254,7 +254,7 @@ export default function SideQuestsPage() {
             </div>
           </div>
 
-          {/* Card 3 — Token Auditor */}
+          {/* Card 3 - Token Auditor */}
           <div className="flex flex-col gap-2">
             <div
               className="w-full overflow-hidden"
@@ -333,7 +333,7 @@ export default function SideQuestsPage() {
             printer. Drag to rotate, scroll to zoom.
           </p>
 
-          {/* Card — Walking pad remote holder */}
+          {/* Card - Walking pad remote holder */}
           <div className="flex flex-col gap-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6">
               <div
@@ -410,7 +410,7 @@ export default function SideQuestsPage() {
             </div>
           </div>
 
-          {/* Card — Bin handle */}
+          {/* Card - Bin handle */}
           <div className="flex flex-col gap-2 mt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6">
               <div
@@ -486,7 +486,7 @@ export default function SideQuestsPage() {
             </div>
           </div>
 
-          {/* Card — Lamp cable holder */}
+          {/* Card - Lamp cable holder */}
           <div className="flex flex-col gap-2 mt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6">
               <div
@@ -565,7 +565,7 @@ export default function SideQuestsPage() {
         </section>
       </main>
 
-      {/* Footer — matches home */}
+      {/* Footer - matches home */}
       <footer
         className="flex items-center justify-between px-6 py-[20px] mt-8"
         style={{ borderTop: "1px solid rgba(50,64,79,0.1)" }}
