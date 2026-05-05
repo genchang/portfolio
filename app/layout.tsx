@@ -20,10 +20,10 @@ const SITE_URL =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Gen Chang — Product Designer",
+  title: "Gen Chang - Product Designer",
   description: "Product designer by trade, tinkerer by nature.",
   openGraph: {
-    title: "Gen Chang — Product Designer",
+    title: "Gen Chang - Product Designer",
     description: "Product designer by trade, tinkerer by nature.",
     url: "/",
     siteName: "Gen Chang",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gen Chang — Product Designer",
+    title: "Gen Chang - Product Designer",
     description: "Product designer by trade, tinkerer by nature.",
   },
 };

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Vision Bank — Designing the foundations of a digital bank";
+export const alt = "Vision Bank - Designing the foundations of a digital bank";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

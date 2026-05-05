@@ -16,7 +16,7 @@ export default function VitalityCaseStudy() {
   return (
     <div className="min-h-screen flex flex-col">
       <div className="flex-1 md:grid md:grid-cols-[220px_1fr] md:gap-8">
-        {/* Sticky left index — hidden on mobile */}
+        {/* Sticky left index - hidden on mobile */}
         <aside className="hidden md:block px-6 pt-10">
           <div className="sticky top-10">
             <CaseStudyIndex items={INDEX_ITEMS} backHref="/" backLabel="Back" />
@@ -79,7 +79,7 @@ export default function VitalityCaseStudy() {
             style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
           >
             Redesigning a global rewards experience used across multiple
-            markets —{" "}
+            markets -{" "}
             <em style={{ fontWeight: 400 }}>
               while balancing consistency, localisation, and usability at
               scale.
@@ -87,7 +87,7 @@ export default function VitalityCaseStudy() {
           </p>
         </section>
 
-        {/* Hero video — reuse vitality hover video as the opening artefact */}
+        {/* Hero video - reuse vitality hover video as the opening artefact */}
         <section className="px-4 md:px-6 pb-16 md:pb-24">
           <div className="max-w-[900px] w-full">
             <div
@@ -124,7 +124,7 @@ export default function VitalityCaseStudy() {
                 letterSpacing: "0.5px",
               }}
             >
-              01 — Context
+              01 - Context
             </div>
             <h2
               className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
@@ -156,8 +156,8 @@ export default function VitalityCaseStudy() {
                 them progress.
               </p>
               <p>
-                At the same time, new features kept getting added — partner
-                rewards, streaks, activity goals, status systems — but there
+                At the same time, new features kept getting added - partner
+                rewards, streaks, activity goals, status systems - but there
                 wasn&apos;t always a shared structure behind them.
               </p>
               <p>The challenge quickly became bigger than visual polish.</p>
@@ -183,7 +183,7 @@ export default function VitalityCaseStudy() {
                 from Sketch to Figma. The bigger goal was much more
                 ambitious: create a global design system, overhaul the UX,
                 and support a single codebase that every market could
-                localise — from language and brand colours to feature
+                localise - from language and brand colours to feature
                 configuration and bespoke modules for regional needs.
               </p>
               <p>Essentially, a high-fidelity white-label app.</p>
@@ -201,7 +201,7 @@ export default function VitalityCaseStudy() {
                 letterSpacing: "0.5px",
               }}
             >
-              02 — Building the spine
+              02 - Building the spine
             </div>
             <h2
               className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
@@ -282,7 +282,7 @@ export default function VitalityCaseStudy() {
               </ul>
               <p>
                 We even introduced a lightweight versioning system directly
-                inside Figma using emoji statuses and semantic versioning —
+                inside Figma using emoji statuses and semantic versioning -
                 things like 🔵 Built, 🟡 In Review, or ⚫ Concept paired
                 with suffixes like <code>_V1.0.0</code> and linked to the
                 dev backlog.
@@ -358,7 +358,7 @@ export default function VitalityCaseStudy() {
                 letterSpacing: "0.5px",
               }}
             >
-              03 — Teaching, not explaining
+              03 - Teaching, not explaining
             </div>
             <h2
               className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
@@ -442,7 +442,7 @@ export default function VitalityCaseStudy() {
                 and understand across markets.
               </p>
               <p>
-                The balance was tricky — the UI needed to feel visual
+                The balance was tricky - the UI needed to feel visual
                 enough for quick comprehension, but still generic enough to
                 support localisation and avoid endless content variations
                 between regions.
@@ -509,7 +509,7 @@ export default function VitalityCaseStudy() {
                 letterSpacing: "0.5px",
               }}
             >
-              04 — Designing for adaptation
+              04 - Designing for adaptation
             </div>
             <h2
               className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
@@ -534,7 +534,7 @@ export default function VitalityCaseStudy() {
               </p>
               <p>
                 The feature originally started as a &ldquo;points
-                booster&rdquo; — earn more points for fewer steps. The
+                booster&rdquo; - earn more points for fewer steps. The
                 intention was to reward consistency, but Vitality&apos;s
                 points system was already complicated, and &ldquo;more
                 points for less activity&rdquo; confused almost everyone we
@@ -636,7 +636,7 @@ export default function VitalityCaseStudy() {
               </p>
               <p>
                 A large part of the design challenge became holding the
-                experience together through all of those shifts — while
+                experience together through all of those shifts - while
                 making sure users still understood what was happening to
                 their goals, and why.
               </p>
@@ -723,7 +723,7 @@ export default function VitalityCaseStudy() {
             </figure>
           </section>
 
-          {/* 05 — Impact */}
+          {/* 05 - Impact */}
           <section id="impact" className="scroll-mt-10">
             <div
               className="text-[13px] uppercase leading-[20px] mb-4"
@@ -734,7 +734,7 @@ export default function VitalityCaseStudy() {
                 letterSpacing: "0.5px",
               }}
             >
-              05 — Impact
+              05 - Impact
             </div>
             <h2
               className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
@@ -800,7 +800,7 @@ export default function VitalityCaseStudy() {
               />
               <Stat
                 value="124"
-                label="Design hours saved on a single project — ~279 dev-hours"
+                label="Design hours saved on a single project - ~279 dev-hours"
               />
               <Stat
                 value="10+"
@@ -813,7 +813,7 @@ export default function VitalityCaseStudy() {
             </div>
           </section>
 
-          {/* 06 — Reflection */}
+          {/* 06 - Reflection */}
           <section id="reflection" className="scroll-mt-10">
             <div
               className="text-[13px] uppercase leading-[20px] mb-4"
@@ -824,7 +824,7 @@ export default function VitalityCaseStudy() {
                 letterSpacing: "0.5px",
               }}
             >
-              06 — Reflection
+              06 - Reflection
             </div>
             <h2
               className="text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] tracking-[-0.2px] text-[#32404f] mb-6"
@@ -931,7 +931,7 @@ export default function VitalityCaseStudy() {
         </main>
       </div>
 
-      {/* Footer — matches home */}
+      {/* Footer - matches home */}
       <footer
         className="flex items-center justify-between px-6 py-[20px]"
         style={{ borderTop: "1px solid rgba(50,64,79,0.1)" }}

@@ -186,7 +186,7 @@ export default function Home() {
 
         {/* Project cards */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6">
-          {/* Card 1 — Discovery Vitality */}
+          {/* Card 1 - Discovery Vitality */}
           <Link href="/vitality" className="flex flex-col gap-2 group">
             <div
               className="w-full overflow-hidden"
@@ -231,13 +231,13 @@ export default function Home() {
                   color: "rgba(50,64,79,0.78)",
                 }}
               >
-                Scaling a global rewards platform across 10+ markets — from
+                Scaling a global rewards platform across 10+ markets - from
                 adaptive AI goals to localisation-ready design systems.
               </p>
             </div>
           </Link>
 
-          {/* Card 2 — Vision Bank */}
+          {/* Card 2 - Vision Bank */}
           <Link href="/vision-bank" className="flex flex-col gap-2 group">
             <div
               className="w-full overflow-hidden"
