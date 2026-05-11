@@ -1,6 +1,8 @@
  "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const ANNOTATION_TEXT = "aka genius mobile app ux/ui\ndesigner mega expert specialist -\ntomato tomahto ";
 import Link from "next/link";
 import HoverVideo from "./HoverVideo";
 import SaFlagIcon from "./SaFlagIcon";
@@ -8,6 +10,28 @@ import ExternalArrow from "./ExternalArrow";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [pdHovered, setPdHovered] = useState(false);
+  const [annotationText, setAnnotationText] = useState("");
+
+  useEffect(() => {
+    if (!pdHovered) {
+      setAnnotationText("");
+      return;
+    }
+    let intervalId: ReturnType<typeof setInterval>;
+    const timeoutId = setTimeout(() => {
+      let i = 0;
+      intervalId = setInterval(() => {
+        i++;
+        setAnnotationText(ANNOTATION_TEXT.slice(0, i));
+        if (i >= ANNOTATION_TEXT.length) clearInterval(intervalId);
+      }, 28);
+    }, 900);
+    return () => {
+      clearTimeout(timeoutId);
+      clearInterval(intervalId);
+    };
+  }, [pdHovered]);
 
   const navLinks = [
     { label: "Work", href: "/", active: true, external: false },
@@ -133,14 +157,127 @@ export default function Home() {
       {/* Main content */}
       <main className="flex-1 px-4 md:px-6">
         {/* Hero section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 pt-16 md:pt-[180px] pb-8">
+        <section className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 pt-16 md:pt-[180px] pb-8">
+
+          {/* Hover annotation — desktop only */}
+          <div className="hidden md:block absolute inset-0 pointer-events-none" aria-hidden="true">
+
+            {/* Annotation text — typewriter in Gaegu, appears on hover */}
+            <div
+              style={{
+                position: "absolute",
+                top: "8px",
+                left: "26%",
+                opacity: pdHovered ? 1 : 0,
+                transition: pdHovered ? "opacity 0.1s ease" : "none",
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: "var(--font-gaegu)",
+                  fontSize: "20px",
+                  lineHeight: "27px",
+                  color: "rgba(50,64,79,0.42)",
+                  whiteSpace: "pre-wrap",
+                }}
+              >
+                {annotationText}
+              </span>
+              {/* Tomato appears inline once typing finishes */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/Annotations/tomato.svg"
+                style={{
+                  width: 32,
+                  height: 24,
+                  display: "inline-block",
+                  verticalAlign: "middle",
+                  opacity: annotationText.length >= ANNOTATION_TEXT.length ? 1 : 0,
+                  transition: "opacity 0.3s ease",
+                }}
+                alt=""
+              />
+            </div>
+
+            {/* Curly arrow — stroke-dashoffset draw animation, upward from bottom */}
+            <div style={{ position: "absolute", top: "100px", left: "35%" }}>
+              <svg width="65" height="86" viewBox="0 0 65 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Curly shaft: path starts at bottom and draws upward to arrowhead */}
+                <path
+                  d="M 32,82 C 44,66 18,54 34,38 C 50,22 20,11 27,2"
+                  stroke="rgba(50,64,79,0.32)"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  fill="none"
+                  style={{
+                    strokeDasharray: 300,
+                    strokeDashoffset: pdHovered ? 0 : 300,
+                    transition: pdHovered ? "stroke-dashoffset 0.7s ease-in-out 0.1s" : "none",
+                  }}
+                />
+                {/* Arrowhead V at top — pointing toward annotation text */}
+                <path
+                  d="M 18,12 L 27,2 L 36,12"
+                  stroke="rgba(50,64,79,0.32)"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                  style={{
+                    strokeDasharray: 30,
+                    strokeDashoffset: pdHovered ? 0 : 30,
+                    transition: pdHovered ? "stroke-dashoffset 0.3s ease-in-out 0.75s" : "none",
+                  }}
+                />
+              </svg>
+            </div>
+
+          </div>
+
           {/* Left: heading */}
           <div className="max-w-[700px]">
             <h1
               className="text-[36px] leading-[42px] md:text-[49.9px] md:leading-[57.2px] tracking-[-0.34px] text-[#32404f]"
               style={{ fontFamily: "var(--font-tiempos)", fontWeight: 300 }}
             >
-              I&apos;m Gen. Product designer by trade,{" "}
+              I&apos;m Gen.{" "}
+              <span style={{ display: "inline-block", position: "relative" }}>
+                Product designer
+                {/* Hearts — visible by default, fade on hover */}
+                <span
+                  style={{
+                    position: "absolute",
+                    top: "-20px",
+                    left: "100%",
+                    marginLeft: "6px",
+                    lineHeight: 0,
+                    pointerEvents: "none",
+                    width: 45,
+                    height: 39,
+                    display: "block",
+                    opacity: pdHovered ? 0 : 1,
+                    transition: "opacity 0.3s ease",
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/Annotations/annotationAlert.svg" style={{ width: 45, height: 39 }} alt="" />
+                </span>
+                {/* Expanded hit-area: covers text + hearts above/right */}
+                <span
+                  onMouseEnter={() => setPdHovered(true)}
+                  onMouseLeave={() => setPdHovered(false)}
+                  style={{
+                    position: "absolute",
+                    top: "-30px",
+                    left: 0,
+                    right: "-55px",
+                    bottom: 0,
+                    cursor: "default",
+                  }}
+                />
+              </span>
+              <br />
+              by trade,{" "}
               <em style={{ fontWeight: 400 }}>tinkerer by nature</em>
             </h1>
           </div>
@@ -326,6 +463,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 function HeartIcon() {
   return (

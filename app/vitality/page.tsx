@@ -1,6 +1,8 @@
 import Link from "next/link";
 import CaseStudyIndex from "../CaseStudyIndex";
 import SaFlagIcon from "../SaFlagIcon";
+import VitalityInfoAnnotation from "./VitalityInfoAnnotation";
+import VitalityWowAnnotation from "./VitalityWowAnnotation";
 
 const INDEX_ITEMS = [
   { id: "overview", label: "Overview" },
@@ -120,7 +122,7 @@ export default function VitalityCaseStudy() {
               style={{
                 fontFamily: "var(--font-geist-mono)",
                 fontWeight: 500,
-                color: "#e65f2e",
+                color: "#E71757",
                 letterSpacing: "0.5px",
               }}
             >
@@ -197,7 +199,7 @@ export default function VitalityCaseStudy() {
               style={{
                 fontFamily: "var(--font-geist-mono)",
                 fontWeight: 500,
-                color: "#e65f2e",
+                color: "#E71757",
                 letterSpacing: "0.5px",
               }}
             >
@@ -230,13 +232,15 @@ export default function VitalityCaseStudy() {
                 simply couldn&apos;t support the new features being added.
               </p>
               <p>So we started replacing them.</p>
-              <p>
-                One small change that ended up having a surprisingly big
-                impact was replacing tooltip-style info icons with in-place
-                bottom sheets. They were easier to discover, worked better
-                for longer translated content, and gave users more context
-                without pushing them into another screen.
-              </p>
+              <VitalityInfoAnnotation>
+                <p>
+                  One small change that ended up having a surprisingly big
+                  impact was replacing tooltip-style info icons with in-place
+                  bottom sheets. They were easier to discover, worked better
+                  for longer translated content, and gave users more context
+                  without pushing them into another screen.
+                </p>
+              </VitalityInfoAnnotation>
               <p>
                 That pattern eventually became reusable across the app
                 anywhere we needed to surface supporting information.
@@ -346,6 +350,41 @@ export default function VitalityCaseStudy() {
                 accessibility of a component.
               </figcaption>
             </figure>
+
+            {/* Doodle stats */}
+            <div className="mt-14">
+              <h3
+                className="text-[20px] leading-[28px] text-[#32404f] mb-6"
+                style={{ fontFamily: "var(--font-tiempos)", fontWeight: 400 }}
+              >
+                Design system stats
+              </h3>
+              <svg
+                width="140"
+                height="14"
+                viewBox="0 0 140 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="mb-10"
+                aria-hidden="true"
+              >
+                <path
+                  d="M 2,7 C 9,2 16,12 23,7 C 30,2 37,12 44,7 C 51,2 58,12 65,7 C 72,2 79,12 86,7 C 93,2 100,12 107,7 C 114,2 121,12 128,7 C 133,3 138,7 140,7"
+                  stroke="rgba(50,64,79,0.22)"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-10">
+                <ScribbleStat value="285+" label="components with documentation and specs" />
+                <ScribbleStat value="17" label="page templates" />
+                <ScribbleStat value="35" label="font styles" />
+                <ScribbleStat value="154" label="icons" />
+                <ScribbleStat value="15" label="global insurance markets and partners" />
+                <ScribbleStat value="89+" label="developers supported, including QA teams" />
+              </div>
+            </div>
           </section>
 
           <section id="teaching" className="scroll-mt-10">
@@ -354,7 +393,7 @@ export default function VitalityCaseStudy() {
               style={{
                 fontFamily: "var(--font-geist-mono)",
                 fontWeight: 500,
-                color: "#e65f2e",
+                color: "#E71757",
                 letterSpacing: "0.5px",
               }}
             >
@@ -505,7 +544,7 @@ export default function VitalityCaseStudy() {
               style={{
                 fontFamily: "var(--font-geist-mono)",
                 fontWeight: 500,
-                color: "#e65f2e",
+                color: "#E71757",
                 letterSpacing: "0.5px",
               }}
             >
@@ -730,7 +769,7 @@ export default function VitalityCaseStudy() {
               style={{
                 fontFamily: "var(--font-geist-mono)",
                 fontWeight: 500,
-                color: "#e65f2e",
+                color: "#E71757",
                 letterSpacing: "0.5px",
               }}
             >
@@ -759,29 +798,32 @@ export default function VitalityCaseStudy() {
               </p>
             </div>
 
-            <h3
-              className="text-[20px] leading-[28px] text-[#32404f] mt-10 mb-4"
-              style={{ fontFamily: "var(--font-tiempos)", fontWeight: 400 }}
-            >
-              Outcomes
-            </h3>
-            <ul
-              className="flex flex-col gap-2 pl-5"
-              style={{
-                listStyleType: "disc",
-                fontFamily: "var(--font-geist-sans)",
-                fontWeight: 400,
-                color: "#32404f",
-                fontSize: "17px",
-                lineHeight: "28px",
-              }}
-            >
-              <li>Reduced inconsistencies across shared experiences</li>
-              <li>Improved clarity around rewards and status systems</li>
-              <li>Increased efficiency when building and maintaining components</li>
-              <li>Reduced design and QA overhead across teams</li>
-              <li>Created stronger alignment between design and development</li>
-            </ul>
+            <div style={{ position: "relative" }}>
+              <h3
+                className="text-[20px] leading-[28px] text-[#32404f] mt-10 mb-4"
+                style={{ fontFamily: "var(--font-tiempos)", fontWeight: 400 }}
+              >
+                Outcomes
+              </h3>
+              <ul
+                className="flex flex-col gap-2 pl-5"
+                style={{
+                  listStyleType: "disc",
+                  fontFamily: "var(--font-geist-sans)",
+                  fontWeight: 400,
+                  color: "#32404f",
+                  fontSize: "17px",
+                  lineHeight: "28px",
+                }}
+              >
+                <li>Reduced inconsistencies across shared experiences</li>
+                <li>Improved clarity around rewards and status systems</li>
+                <li>Increased efficiency when building and maintaining components</li>
+                <li>Reduced design and QA overhead across teams</li>
+                <li>Created stronger alignment between design and development</li>
+              </ul>
+              <VitalityWowAnnotation />
+            </div>
 
             <h3
               className="text-[20px] leading-[28px] text-[#32404f] mt-10 mb-6"
@@ -789,24 +831,41 @@ export default function VitalityCaseStudy() {
             >
               Measurable impact
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-10 py-8 border-y border-[rgba(50,64,79,0.1)]">
-              <Stat
+            <svg
+              width="140"
+              height="14"
+              viewBox="0 0 140 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="mb-10"
+              aria-hidden="true"
+            >
+              <path
+                d="M 2,7 C 9,2 16,12 23,7 C 30,2 37,12 44,7 C 51,2 58,12 65,7 C 72,2 79,12 86,7 C 93,2 100,12 107,7 C 114,2 121,12 128,7 C 133,3 138,7 140,7"
+                stroke="rgba(50,64,79,0.22)"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-10">
+              <ScribbleStat
                 value="41%"
                 label="Reduction in usability issues across heuristic evaluations"
               />
-              <Stat
+              <ScribbleStat
                 value="67%"
                 label="Reduction in design-QA time on major journeys (16 → 5 days)"
               />
-              <Stat
+              <ScribbleStat
                 value="124"
                 label="Design hours saved on a single project - ~279 dev-hours"
               />
-              <Stat
+              <ScribbleStat
                 value="10+"
                 label="Markets running on a single component library"
               />
-              <Stat
+              <ScribbleStat
                 value="2 yrs"
                 label="Before the US and UK design teams aligned to the system"
               />
@@ -820,7 +879,7 @@ export default function VitalityCaseStudy() {
               style={{
                 fontFamily: "var(--font-geist-mono)",
                 fontWeight: 500,
-                color: "#e65f2e",
+                color: "#E71757",
                 letterSpacing: "0.5px",
               }}
             >
@@ -984,7 +1043,7 @@ function Section({
           style={{
             fontFamily: "var(--font-geist-mono)",
             fontWeight: 500,
-            color: "#e65f2e",
+            color: "#E71757",
             letterSpacing: "0.5px",
           }}
         >
@@ -1046,7 +1105,7 @@ function Pullquote({ children }: { children: React.ReactNode }) {
         fontSize: "26px",
         lineHeight: "36px",
         color: "#32404f",
-        borderLeft: "2px solid #e65f2e",
+        borderLeft: "2px solid #E71757",
         paddingLeft: "24px",
       }}
     >
@@ -1093,6 +1152,51 @@ function Placeholder({
         {caption}
       </figcaption>
     </figure>
+  );
+}
+
+function ScribbleStat({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="flex flex-col gap-2">
+      <div
+        style={{
+          fontFamily: "var(--font-gaegu)",
+          fontWeight: 400,
+          fontSize: "56px",
+          lineHeight: "56px",
+          color: "#E71757",
+        }}
+      >
+        {value}
+      </div>
+      <svg
+        width="56"
+        height="8"
+        viewBox="0 0 56 8"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        style={{ marginTop: "-4px" }}
+      >
+        <path
+          d="M 2,4 C 6,1 10,7 14,4 C 18,1 22,7 26,4 C 30,1 34,7 38,4 C 42,1 46,7 50,4 C 53,2 56,4 56,4"
+          stroke="rgba(231,23,87,0.35)"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          fill="none"
+        />
+      </svg>
+      <div
+        className="text-[13px] leading-[20px] uppercase"
+        style={{
+          fontFamily: "var(--font-geist-mono)",
+          color: "rgba(50,64,79,0.55)",
+          letterSpacing: "0.3px",
+        }}
+      >
+        {label}
+      </div>
+    </div>
   );
 }
 
