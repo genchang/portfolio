@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Gaegu } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -53,7 +54,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${gaegu.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="bg-[#fafcfd] text-[#32404f]">{children}</body>
+      <body className="bg-[#fafcfd] text-[#32404f]">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
