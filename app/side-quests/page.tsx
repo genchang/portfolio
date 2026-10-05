@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import DottyAppButton from "../DottyAppButton";
 import HoverVideo from "../HoverVideo";
 import Carousel from "../Carousel";
 import StlViewer from "../StlViewer";
@@ -68,6 +69,7 @@ export default function SideQuestsPage() {
                 {external && <ExternalArrow />}
               </Link>
             ))}
+            <DottyAppButton />
           </div>
 
           <button
@@ -104,6 +106,7 @@ export default function SideQuestsPage() {
               {external && <ExternalArrow />}
             </Link>
           ))}
+          <DottyAppButton />
         </div>
       </nav>
 

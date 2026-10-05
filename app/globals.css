@@ -38,8 +38,8 @@ body {
   color: var(--foreground);
 }
 
-/* Site-wide arrow cursor. Hotspot (3 2) is the arrow's tip in the 39x43 SVG.
+/* Site-wide arrow cursor. Drawn at 20x22 (the 39x43 art scaled to a system-arrow size); hotspot (2 1) is its tip.
    Links, buttons and text fields keep their own cursors (pointer, text). */
 html {
-  cursor: url("/cursor.svg") 3 2, auto;
+  cursor: url("/cursor.svg") 2 1, auto;
 }
