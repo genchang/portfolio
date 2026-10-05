@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import DottyAppButton from "../DottyAppButton";
 import SaFlagIcon from "../SaFlagIcon";
 import ExternalArrow from "../ExternalArrow";
 
@@ -66,6 +67,7 @@ export default function AboutPage() {
                 {external && <ExternalArrow />}
               </Link>
             ))}
+            <DottyAppButton />
           </div>
 
           <button
@@ -102,6 +104,7 @@ export default function AboutPage() {
               {external && <ExternalArrow />}
             </Link>
           ))}
+          <DottyAppButton />
         </div>
       </nav>
 

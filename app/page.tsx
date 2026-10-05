@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 const ANNOTATION_TEXT = "aka genius mobile app ux/ui\ndesigner mega expert specialist -\ntomato tomahto ";
 import Link from "next/link";
+import DottyAppButton from "./DottyAppButton";
 import HoverVideo from "./HoverVideo";
 import SaFlagIcon from "./SaFlagIcon";
 import ExternalArrow from "./ExternalArrow";
@@ -114,6 +115,7 @@ export default function Home() {
                 {external && <ExternalArrow />}
               </Link>
             ))}
+            <DottyAppButton />
           </div>
 
           {/* Mobile hamburger */}
@@ -151,6 +153,7 @@ export default function Home() {
               {external && <ExternalArrow />}
             </Link>
           ))}
+          <DottyAppButton />
         </div>
       </nav>
 
@@ -272,7 +275,6 @@ export default function Home() {
                     left: 0,
                     right: "-55px",
                     bottom: 0,
-                    cursor: "default",
                   }}
                 />
               </span>
