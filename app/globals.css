@@ -37,3 +37,9 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* Site-wide arrow cursor. Hotspot (3 2) is the arrow's tip in the 39x43 SVG.
+   Links, buttons and text fields keep their own cursors (pointer, text). */
+html {
+  cursor: url("/cursor.svg") 3 2, auto;
+}
